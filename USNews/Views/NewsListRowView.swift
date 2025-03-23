@@ -25,12 +25,14 @@ struct NewsListRowView: View {
             .clipShape(RoundedRectangle(cornerRadius: 24))
                 
             VStack(alignment: .leading, spacing: 8) {
-                Text(newsItem.description ?? "")
+                Text(newsItem.title)
                     .lineLimit(3)
                     .font(.headline)
-                Text(newsItem.author ?? "")
-                    .font(.callout)
-                    .foregroundStyle(.secondary)
+                if let author = newsItem.author {
+                    Text(newsItem.author ?? "")
+                        .font(.callout)
+                        .foregroundStyle(.secondary)
+                }
             }
         }
     }

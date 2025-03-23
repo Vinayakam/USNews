@@ -25,7 +25,7 @@ class NewsListViewModel {
             isLoading = false
         }
         
-        let urlString = "https://newsapi.org/v2/top-headlines?country=\(country)&apiKe=\(apiKey)"
+        let urlString = "https://newsapi.org/v2/top-headlines?country=\(country)&apiKey=\(apiKey)"
         let apiService = APIService()
         do {
             let newsResponse: News = try await apiService.getJson(urlString: urlString)
