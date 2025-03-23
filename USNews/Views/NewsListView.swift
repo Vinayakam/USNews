@@ -17,15 +17,18 @@ struct NewsListView: View {
                     ContentUnavailableView("No latest news to show", systemImage: "xmark.app")
                         .foregroundStyle(.secondary)
                 } else {
-                    ZStack {
-                        if viewModel.isLoading {
-                            ProgressView("Loading...")
-                        } else {
-                            List(viewModel.news) { newsItem in
+                    if viewModel.isLoading {
+                        ProgressView("Loading...")
+                    } else {
+                        List(viewModel.news) { newsItem in
+                            NavigationLink {
+                                //
+                            } label: {
                                 NewsListRowView(newsItem: newsItem)
                             }
-                            .listStyle(.grouped)
+
                         }
+                        .listStyle(.grouped)
                     }
                 }
             }

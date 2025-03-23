@@ -29,7 +29,7 @@ struct NewsListRowView: View {
                     .lineLimit(3)
                     .font(.headline)
                 if let author = newsItem.author {
-                    Text(newsItem.author ?? "")
+                    Text(author)
                         .font(.callout)
                         .foregroundStyle(.secondary)
                 }
