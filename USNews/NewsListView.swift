@@ -11,10 +11,16 @@ struct NewsListView: View {
     let viewModel = NewsListViewModel()
     
     var body: some View {
-        Text("Hello, World!")
-            .task {
-                await viewModel.fetchNews()
+        NavigationStack {
+            List(viewModel.news) { newsItem in
+                NewsListRowView(newsItem: newsItem)
             }
+            .navigationTitle("Latest News")
+            .listStyle(.grouped)
+        }
+        .task {
+            await viewModel.fetchNews()
+        }
     }
 }
 

@@ -21,6 +21,14 @@ struct NewsArticle: Codable, Identifiable {
     let urlToImage: String?
     let content: String?
     
+    var imageURL: URL? {
+        if let imageUrlString = urlToImage {
+            return URL(string: imageUrlString)
+        }
+        
+        return nil
+    }
+    
     var id: String {
         UUID().uuidString
     }

@@ -14,6 +14,7 @@
 		2FDEF83F2D9024670078F16D /* NewsListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FDEF83E2D9024670078F16D /* NewsListViewModel.swift */; };
 		2FDEF8412D9024CC0078F16D /* News.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FDEF8402D9024CC0078F16D /* News.swift */; };
 		2FDEF8432D9027590078F16D /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FDEF8422D9027590078F16D /* APIService.swift */; };
+		2FDEF8452D902EF10078F16D /* NewsListRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FDEF8442D902EF10078F16D /* NewsListRowView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,6 +26,7 @@
 		2FDEF83E2D9024670078F16D /* NewsListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsListViewModel.swift; sourceTree = "<group>"; };
 		2FDEF8402D9024CC0078F16D /* News.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = News.swift; sourceTree = "<group>"; };
 		2FDEF8422D9027590078F16D /* APIService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
+		2FDEF8442D902EF10078F16D /* NewsListRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsListRowView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +66,7 @@
 				2FDEF83E2D9024670078F16D /* NewsListViewModel.swift */,
 				2FDEF8402D9024CC0078F16D /* News.swift */,
 				2FDEF8422D9027590078F16D /* APIService.swift */,
+				2FDEF8442D902EF10078F16D /* NewsListRowView.swift */,
 			);
 			path = USNews;
 			sourceTree = "<group>";
@@ -146,6 +149,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2FDEF8452D902EF10078F16D /* NewsListRowView.swift in Sources */,
 				2FDEF83D2D90245A0078F16D /* NewsListView.swift in Sources */,
 				2FDEF82D2D901D670078F16D /* USNewsApp.swift in Sources */,
 				2FDEF8412D9024CC0078F16D /* News.swift in Sources */,
