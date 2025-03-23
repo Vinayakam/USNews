@@ -22,7 +22,7 @@ struct NewsListView: View {
                     } else {
                         List(viewModel.news) { newsItem in
                             NavigationLink {
-                                //
+                                NewsDetailsView(newsItem: newsItem)
                             } label: {
                                 NewsListRowView(newsItem: newsItem)
                             }

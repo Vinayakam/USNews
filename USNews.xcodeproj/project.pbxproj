@@ -17,6 +17,7 @@
 		2FDEF8452D902EF10078F16D /* NewsListRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FDEF8442D902EF10078F16D /* NewsListRowView.swift */; };
 		2FDEF84B2D903FD80078F16D /* NewsDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FDEF84A2D903FD80078F16D /* NewsDetailsView.swift */; };
 		2FDEF84D2D903FEC0078F16D /* NewsDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FDEF84C2D903FEC0078F16D /* NewsDetailsViewModel.swift */; };
+		2FDEF84F2D906AA60078F16D /* MockNews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FDEF84E2D906AA60078F16D /* MockNews.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +32,7 @@
 		2FDEF8442D902EF10078F16D /* NewsListRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsListRowView.swift; sourceTree = "<group>"; };
 		2FDEF84A2D903FD80078F16D /* NewsDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsDetailsView.swift; sourceTree = "<group>"; };
 		2FDEF84C2D903FEC0078F16D /* NewsDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsDetailsViewModel.swift; sourceTree = "<group>"; };
+		2FDEF84E2D906AA60078F16D /* MockNews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockNews.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,6 +80,7 @@
 			isa = PBXGroup;
 			children = (
 				2FDEF8332D901D680078F16D /* Preview Assets.xcassets */,
+				2FDEF84E2D906AA60078F16D /* MockNews.swift */,
 			);
 			path = "Preview Content";
 			sourceTree = "<group>";
@@ -192,6 +195,7 @@
 				2FDEF82D2D901D670078F16D /* USNewsApp.swift in Sources */,
 				2FDEF8412D9024CC0078F16D /* News.swift in Sources */,
 				2FDEF84D2D903FEC0078F16D /* NewsDetailsViewModel.swift in Sources */,
+				2FDEF84F2D906AA60078F16D /* MockNews.swift in Sources */,
 				2FDEF8432D9027590078F16D /* APIService.swift in Sources */,
 				2FDEF84B2D903FD80078F16D /* NewsDetailsView.swift in Sources */,
 				2FDEF83F2D9024670078F16D /* NewsListViewModel.swift in Sources */,

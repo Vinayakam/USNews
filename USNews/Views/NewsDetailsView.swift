@@ -15,10 +15,68 @@ struct NewsDetailsView: View {
     }
     
     var body: some View {
-        Text("Hello, World!")
+        ScrollView {
+            AsyncImage(url: viewModel.newsItem.imageURL) { image in
+                image
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
+            } placeholder: {
+                Image(systemName: "newspaper")
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
+                    .frame(height: 200)
+            }
+            .frame(maxWidth: .infinity)
+                
+            VStack(alignment: .leading, spacing: 10) {
+                Text(viewModel.newsItem.title)
+                    .font(.headline)
+                if let author = viewModel.newsItem.author {
+                    Text(author)
+                        .font(.callout)
+                        .foregroundStyle(.secondary)
+                }
+                
+                Divider()
+                
+                if let description = viewModel.newsItem.description {
+                    Text(description)
+                        .foregroundStyle(.secondary)
+                }
+                
+                if let content = viewModel.newsItem.content {
+                    Text(content)
+                        .foregroundStyle(.secondary)
+                    Divider()
+                }
+                
+                if let likes = viewModel.likes {
+                    HStack {
+                        Text("Likes:")
+                            .bold()
+                        Text("\(likes)")
+                    }
+                    .padding(.vertical)
+                }
+                
+                if let comments = viewModel.comments {
+                    Text("Comments:")
+                        .bold()
+                    ForEach(comments, id: \.self) { comment in
+                        Text(comment)
+                            .foregroundStyle(.secondary)
+                    }
+                }
+            }
+            .navigationBarTitleDisplayMode(.inline)
+            .padding(8)
+        }
+        .task {
+            await viewModel.fetchLikes()
+        }
     }
 }
 
 #Preview {
-    NewsDetailsView(newsItem: NewsArticle(author: "https://www.facebook.com/bbcnews", title: "Sunday with Laura Kuenssberg: Chancellor Rachel Reeves confirms plan to cut Civil Service running costs by 15% - BBC.com", description: "The chancellor says she is committed to cutting the costs of running government ahead of this week's Spring Statement.", url: "https://www.bbc.com/news/live/c3d8385k2xet", urlToImage: "https://ichef.bbci.co.uk/ace/branded_news/1200/cpsprodpb/ef4e/live/2139f0d0-07d1-11f0-88b7-5556e7b55c5e.jpg", content: ""))
+    NewsDetailsView(newsItem: MockNews.newsItem)
 }
