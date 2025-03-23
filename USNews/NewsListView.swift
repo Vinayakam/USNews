@@ -8,15 +8,34 @@
 import SwiftUI
 
 struct NewsListView: View {
-    let viewModel = NewsListViewModel()
+    @State private var viewModel = NewsListViewModel()
     
     var body: some View {
         NavigationStack {
-            List(viewModel.news) { newsItem in
-                NewsListRowView(newsItem: newsItem)
+            Group {
+                if viewModel.news.isEmpty && !viewModel.errorMessage.isEmpty {
+                    ContentUnavailableView("No latest news to show", systemImage: "xmark.app")
+                        .foregroundStyle(.secondary)
+                } else {
+                    ZStack {
+                        if viewModel.isLoading {
+                            ProgressView("Loading...")
+                        } else {
+                            List(viewModel.news) { newsItem in
+                                NewsListRowView(newsItem: newsItem)
+                            }
+                            .listStyle(.grouped)
+                        }
+                    }
+                }
             }
+            .alert("Application Error",
+                   isPresented: $viewModel.showError,
+                   actions: { Button("Ok") {} },
+                   message: {
+                Text(viewModel.errorMessage)
+            })
             .navigationTitle("Latest News")
-            .listStyle(.grouped)
         }
         .task {
             await viewModel.fetchNews()
